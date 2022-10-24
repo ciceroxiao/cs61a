@@ -38,7 +38,9 @@ def two_of_three(i, j, k):
     # 1. 先取出三个数字中较小的两个数字，再计算其平方和
     # return sum([_**2 for _ in sorted([i, j, k])[:2]])
     # 2. 先计算三个数字的平方和，再减去最大的那个数字之平方
-    return sum(_**2 for _ in [i, j, k]) - max([i, j, k]) ** 2
+    # return sum(_**2 for _ in [i, j, k]) - max(i, j, k) ** 2
+    # 3. 标准答案：穷举三个数中两两之间的平方和，然后找到最小的那个平方和
+    return min(i**2 + j**2, i**2 + k**2, j**2 + k**2)
 
 
 def largest_factor(n):
@@ -62,12 +64,20 @@ def largest_factor(n):
     # return max(facotrs)
 
     # 2. 根据每一次除法的结果来确定 n 的最大因数（除了它自身）
-    begin_index, the_largest_factor, stop_index = 1, 1, n
-    while begin_index < stop_index:
-        if n % begin_index == 0:
-            the_largest_factor = begin_index
-        begin_index += 1
-    return the_largest_factor
+    # begin_index, the_largest_factor, stop_index = 1, 1, n
+    # while begin_index < stop_index:
+    #     if n % begin_index == 0:
+    #         the_largest_factor = begin_index
+    #     begin_index += 1
+    # return the_largest_factor
+
+    # 3. 标准答案：从 n 开始递减，如果某个数能被 n 整除，那么这个数就是目标数字
+    # 这个方法更好，能更快地找到目标数字
+    factor = n - 1
+    while factor > 0:
+        if n % factor == 0:
+            return factor
+        factor -= 1
 
 
 def hailstone(n):
