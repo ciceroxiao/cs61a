@@ -1,4 +1,4 @@
-"""此程序包含 Solution 中的习题"""
+"""此程序包含 week 2 中 Lab 01 中的习题"""
 
 
 def falling(n, k):
@@ -68,11 +68,6 @@ def double_eights(n):
     >>> double_eights(80808080)
     False
     """
-    # 思路：
-    # 设置两个变量，first_eight 和 second_eight
-    # 在寻找的过程中，不断改变 n、first_eight 和 seconde_eight 的值
-    # 如果 first_eight 和 second_eight 都是 True 的话，则整个函数返回 True
-    # 如果 n = 0 时仍未出现 first_eight 和 second_eight 都是 True 的话，则返回 False
     first_eight = second_eight = False
     while n > 0:
         second_eight = n % 10 == 8

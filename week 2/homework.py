@@ -17,15 +17,6 @@ def product(n: int, tern) -> int:
     >>> product(3, triple)    # 1*3 * 2*3 * 3*3
     162
     """
-    # 根据函数的定义可知，其需求是：给予一个正整数 n 和一个纯函数 tern，使用
-    #   纯函数 tern 来逐个处理 1~n，最后返回 tern 处理后的累计值。
-    #   此纯函数 tern 只接收一个参数，并返回一个值。
-    #
-    # 具体案例： product(5, identity)，其计算过程是：
-    #   1 --> 1 * 2 --> 1 * 2 * 3 --> 1 * 2 * 3 * 4 --> 1 * 2 * 3 *4
-    #   --> 1 * 2 * 3 * 4 * 5
-    #
-    # 实现思路：使用 while 来迭代实现需求
     result, start = 1, 1
     while start <= n:
         result = result * tern(start)
@@ -63,13 +54,6 @@ def accumulate(merger, start: int, n: int, term) -> int:
     >>> accumulate(lambda x, y: (x + y) % 17, 19, 20, square)
     16
     """
-    # 根据函数定义可知，其需求是：给定一个正整数 n 和纯函数 tern，先使用 tern 处理 1~n。
-    #   然后，再给定一个起始数字 start 和纯函数 merger
-    #
-    # 观察最后几个 lambda 函数可知，例如 accumulate(mul, 2, 3, square)
-    # 其计算过程是：
-    # start --> start * 1^2 --> start * 1^2 * 2^2 --> start * 1^2 * 2^2 * 3^2
-    # 实现思路：
     result, start_num = start, 1
     while start_num <= n:
         result = merger(term(start_num), result)

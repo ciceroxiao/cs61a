@@ -1,4 +1,4 @@
-week 2 的 Solution 解答
+week 2 中 Lab01 的解答
 
 ### Q1: Syllabus Quiz
 pass
