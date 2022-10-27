@@ -61,3 +61,12 @@ def so_slow(num):
 square(so_slow(5))
 没有输出，因为此段代码陷入无限循环
 ```
+
+### Q4: Is Prime?
+见 disc01.py。
+
+### Q5: Fizzbuzz
+见 disc01.py。
+
+### Q6: Unique Digits
+见 disc01.py。
