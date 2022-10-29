@@ -1,6 +1,6 @@
 import unittest
 
-from homework import accumulate, product
+from homework_02 import accumulate, product
 from lab01 import falling, double_eights
 from disc01 import wears_jacket_with_if, is_prime, fizzbuzz, unique_digits, has_digit
 from operator import add, mul

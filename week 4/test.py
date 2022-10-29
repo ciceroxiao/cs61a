@@ -1,8 +1,8 @@
 import unittest
 
 from disc03 import skip_mul, is_prime, hailstone, merge
-from homework import num_eights, pingpong, next_smaller_coin, next_larger_coin
-from homework import count_coins
+from homework_03 import num_eights, pingpong, next_smaller_coin, next_larger_coin
+from homework_03 import count_coins
 
 
 class TestDisc03(unittest.TestCase):
